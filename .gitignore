@@ -1,0 +1,4 @@
+.vagrant/
+output-vbox/
+output-vmware/
+packer_cache/
