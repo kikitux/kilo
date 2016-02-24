@@ -16,6 +16,7 @@ SERVICE_TOKEN=password
 DATABASE_PASSWORD=password
 RABBIT_PASSWORD=password
 SERVICE_PASSWORD=password
+HOST_IP=127.0.0.1
 
 disable_service n-net
 enable_service q-svc
@@ -23,8 +24,8 @@ enable_service q-agt
 enable_service q-dhcp
 enable_service q-l3
 enable_service q-meta
+enable_service key
 disable_service tempest
-#OFFLINE=True
 
 # Github's Branch
 GLANCE_BRANCH=stable/kilo
@@ -38,8 +39,8 @@ CEILOMETER_BRANCH=stable/kilo
 EOF
 
 sudo hostname devstack.local
-echo '127.0.0.1 devstack.local devstack localhost' | sudo tee /etc/hosts
+echo '127.0.0.1 devstack.local devstack localhost ubuntu-1404-vmware ubuntu-1404-vbox' | sudo tee /etc/hosts
 
 ./stack.sh
 ./unstack.sh
-sed -i 's/\#OFFLINE=True/OFFLINE=True/' local.conf
+true

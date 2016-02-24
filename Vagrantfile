@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   ENV['mem'] ||="5000"
-  config.vm.box = "cbednarski/ubuntu-1404"
+  config.vm.box = "alvaro/kilo"
   config.vm.hostname = "devstack.local"
 
   config.vm.network "forwarded_port", guest: 80, host: 8888
